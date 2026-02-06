@@ -1,0 +1,95 @@
+<html>
+<head>
+<title>BOOK TICKETS
+</title>
+<meta name="viewport" content="width=device-width,user-scalable=no"/>
+<style>
+body {background:black url('home111.png') no-repeat fixed;color:white;font-family: Arial, sans-serif;padding:40px;color:white;padding:0px;margin:0px}
+form{align:center;background:#00000099;color:white;border-radius:15px;padding:30px;width:400px;margin-left:400px;margin-top:100px}
+.i1{text-shadow:2px 2px 4px black;text-align:center}
+label{font-weight:bold;margin:8px 0px 4px 0px;display:block}
+#t1{background:#FFFFFF1A;border:2px solid #FFFFFF66;border-radius:5px;width:400px;height:35px;margin-bottom:3px; outline:none;box-shadow:none;color:white}
+
+#t1:focus{border:2px solid white;background: #FFFFFF33}
+
+#t7{margin-right: 6px}
+#t2{margin-top:15px;width:100%;background:white;color:black;font-weight:bold;border: none;padding: 10px;border-radius:6px}
+#t2:hover{background:transparent;color:white;border:2px solid white}
+
+::placeholder {color: #ccc;}
+
+#a1{width:400px;margin-top:20px;background:transparent;border:none;color:white;text-shadow 2px 2px 4px black;font-size:20px}
+.aa{font-size:40px;text-shadow:2px 2px 4px black;font-family:'Cormorant Garamond', serif;letter-spacing: 2px;padding-left:24px}
+#dd{background:#000000CC;margin:0px;padding:3px;line-height:1px}
+#dd:hover{background:black}
+a{text-decoration:none;color:white}
+</style>
+</head>
+<body>
+<div id="dd">
+
+<h1 class="aa"><a href="HOME1.html">ECHOVAULT</a>
+</div>
+<form onsubmit="showmessage(event)">
+<h2 class="i1">Museum Ticket Booking</h2>
+<table>
+
+<tr>
+<td><label>Enter Name</label></td></tr>
+<tr><td><input type="text" name="t1" id="t1"  placeholder="First name"   required autocomplete="off"></td></tr>
+<tr><td><input type="text" name="t2" id="t1"  placeholder="Last name"   required autocomplete="off">
+</tr>
+
+
+<tr><td><label>E-mail</label></td></tr><tr>
+<td><input type="email" name="t3" id="t1"  placeholder="ex:myname@example.com"  SIZE=25 required autocomplete="off"></td></tr>
+
+
+<tr><td><label>Phone Number</label></tr><tr>
+<td><input type="tel" id="t1" name="tel" maxlength="10" pattern="[0-9]{8,}" size=10 autocomplete=off placeholder="10-digit mobile number"></td></tr>
+
+
+<tr><td><label>Museum</label></td></tr>
+<tr><td><input type="radio" name="mu" id="t7" value="m" checked>Louvre</td></tr>
+<tr><td><input type="radio" name="mu" id="t7" value="m">The British Museum</td></tr>
+<tr><td><input type="radio" name="mu" id="t7" value="m">The Met</td></tr>
+<tr><td><input type="radio" name="mu" id="t7" value="m">MAP</td></tr>
+
+
+<tr><td><label>Choose Quantity</label></tr><tr>
+</td><td ><input type="number" name="t5" id="t1" min="1" max="10" placeholder="1-10 Tickets" required ></td></tr>
+
+
+<tr><td><label>Desired Booking date and time</label></td></tr>
+<tr><td><input type="date" name="t4" id="t1"  ></td></tr><tr><td><input type="time" name="ti" id="t1" required></td></tr>
+
+
+<tr><td><input type="submit" value="Submit" id="t2"></td></tr>
+
+</table>
+<td><input type="text" id="a1" name="a2" readonly></textarea></td>
+</form>
+<script>
+window.onload = function() {
+let bg = sessionStorage.getItem('bg');
+
+if (bg == "louvre")
+  document.body.style.background = "black url('l3.jpg') no-repeat fixed";
+else if (bg == "british")
+  document.body.style.background = "black url('vb3.jpg') no-repeat fixed";
+else if (bg == "met")
+  document.body.style.background = "black url('m3.jpg') no-repeat fixed";
+else if (bg == "map")
+  document.body.style.background = "black url('map4.jpg') no-repeat fixed";
+}
+
+
+function showmessage(event) {
+event.preventDefault();
+document.getElementById("a1").value = "✅ Thank you! Your booking is confirmed.";
+}
+
+
+</script>
+</body>
+</html>
