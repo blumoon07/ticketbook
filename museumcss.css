@@ -16,8 +16,13 @@ button:hover{background-color:white;color:black}
 a{color:white;text-decoration:none}
 .a2:hover{text-shadow:4px 4px 2px black}
 .aa{font-size:40px;text-shadow:2px 2px 4px black;list-style:none;font-family:'Cormorant Garamond', serif;letter-spacing: 2px;padding-left:24px}
-#dd{background:#000000CC;margin:0px;padding:3px;line-height:1px}
+#dd{background:#000000CC;margin:0px;padding:3px;line-height:1px;position:fixed;z-index:9999;width:100%;
+top:0;
+left:0;}
 #dd:hover{background:black}
 body{margin:0px;padding:0px}
 .top{position:fixed;top:480px;left:1185px;opacity:0.5}
 .top:hover{opacity:1}
+#tagline {color: #e0e0e0;text-shadow: 0 0 5px #ffffff33;margin:0px;display:inline;font-size:16px;padding-top:10px;margin-left:10px;font-family: "Cormorant Garamond", serif;font-style: italic;letter-spacing: 0.5px}
+p#pt{color:white;margin:0px;font-size:40px;display:inline;font-family:  'Cormorant Garamond', serif;letter-spacing: 2px;padding-left:8px;
+font-weight: 600;}      
