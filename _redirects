@@ -5,8 +5,8 @@
 /map       /map.html       200
 /visit-met      /vmet.html      200
 /visit-british  /vbritish.html 200
-/the-british-museum  /The British Museum.html 200
-/the-met    /The Met.html    200
-/visit-louvre    /visit louvre.html   200
+/the-british-museum  /The%20British%20Museum.html 200
+/the-met    /The%20Met.html    200
+/visit-louvre    /visit%20louvre.html   200
 
 
