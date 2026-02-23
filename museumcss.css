@@ -15,7 +15,7 @@ button{background:black;color:white;margin-top:40px;font-size:30px;padding:8px;m
 button:hover{background-color:white;color:black}
 a{color:white;text-decoration:none}
 .a2:hover{text-shadow:4px 4px 2px black}
-.aa{font-size:40px;text-shadow:2px 2px 4px black;list-style:none;font-family:'Cormorant Garamond', serif;letter-spacing: 2px;padding-left:24px}
+.aa{font-size:20px;text-shadow:2px 2px 4px black;list-style:none;font-family:'Cormorant Garamond', serif;letter-spacing: 2px;padding-left:24px}
 #dd{background:#000000CC;margin:0px;padding:3px;line-height:1px;position:fixed;z-index:9999;width:100%;
 top:0;
 left:0;}
