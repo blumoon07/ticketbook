@@ -24,6 +24,6 @@ body{margin:0px;padding:0px}
 .top{position:fixed;top:480px;left:1185px;opacity:0.5}
 .top:hover{opacity:1}
 .aa{font-size:20px;text-shadow:2px 2px 4px black;list-style:none;font-family:'Cormorant Garamond', serif;letter-spacing: 2px;padding-left:24px}
-#tagline {color: #e0e0e0;text-shadow: 0 0 5px #ffffff33;margin:0px;display:inline;font-size:10px;padding-top:10px;margin-left:10px;font-family: "Cormorant Garamond", serif;font-style: italic;letter-spacing: 0.5px}
+#tagline {color: #e0e0e0;text-shadow: 0 0 5px #ffffff33;margin:0px;display:inline;font-size:15spx;padding-top:10px;margin-left:10px;font-family: "Cormorant Garamond", serif;font-style: italic;letter-spacing: 0.5px}
 p#pt{color:white;margin:0px;font-size:40px;display:inline;font-family:  'Cormorant Garamond', serif;letter-spacing: 2px;padding-left:8px;
 font-weight: 600;}      
