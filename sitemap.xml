@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset
+      xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9
+            http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
+<!-- created with Free Online Sitemap Generator www.xml-sitemaps.com -->
+
+
+<url>
+  <loc>https://museumticket.netlify.app/</loc>
+  <lastmod>2026-02-23T15:26:00+00:00</lastmod>
+  <priority>1.00</priority>
+</url>
+<url>
+  <loc>https://museumticket.netlify.app/book</loc>
+  <lastmod>2026-02-23T15:26:00+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://museumticket.netlify.app/louvre</loc>
+  <lastmod>2026-02-23T15:26:00+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://museumticket.netlify.app/the%20british%20museum</loc>
+  <lastmod>2026-02-23T15:26:00+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://museumticket.netlify.app/the%20met</loc>
+  <lastmod>2026-02-23T15:26:00+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://museumticket.netlify.app/map</loc>
+  <lastmod>2026-02-23T15:26:00+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://museumticket.netlify.app/visit%20louvre.html</loc>
+  <lastmod>2026-02-23T15:26:00+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://museumticket.netlify.app/vmet</loc>
+  <lastmod>2026-02-23T15:26:00+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://museumticket.netlify.app/vmap</loc>
+  <lastmod>2026-02-23T15:26:00+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://museumticket.netlify.app/vbritish</loc>
+  <lastmod>2026-02-23T15:26:00+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+
+
+</urlset>
