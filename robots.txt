@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap:https://museumticket.netlify.app/sitemap.xml
