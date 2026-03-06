@@ -127,7 +127,7 @@ a{text-decoration:none;color:white}
 <h1 class="aa"><a href="HOME1.html">ECHOVAULT</a></h1>
 </div>
 
-<form action="https://app.us3.list-manage.com/subscribe/post?u=4e595a5c3c7b0dc028af2307c&id=9c6ef55753"
+<form action="https://app.us3.list-manage.com/subscribe/post?u=4e595a5c3c7b0dc028af2307c&amp;id=9c6ef55753&amp;f_id=0048bbe2f0" 
 method="post"
 onsubmit="showmessage()">
 
@@ -166,9 +166,10 @@ onsubmit="showmessage()">
 
 <!-- Mailchimp hidden anti-bot field -->
 
-<div style="position:absolute; left:-5000px;">
-<input type="text" name="b_4e595a5c3c7b0dc028af2307c_9c6ef55753" tabindex="-1" value="">
-</div>
+ <div aria-hidden="true" style="position: absolute; left: -5000px;">
+        /* real people should not fill this in and expect good things - do not remove this or risk form bot signups */
+        <input type="text" name="b_4e595a5c3c7b0dc028af2307c_9c6ef55753" tabindex="-1" value="">
+    </div>
 
 <input type="submit" value="Submit" id="t2">
 
