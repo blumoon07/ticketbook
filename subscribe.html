@@ -1,0 +1,638 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>ECHOVAULT — Booking Confirmation</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Raleway:wght@300;400;500;600&display=swap" rel="stylesheet"/>
+  <link href="//cdn-images.mailchimp.com/embedcode/classic-061523.css" rel="stylesheet" type="text/css">
+
+  <style>
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: 'Raleway', sans-serif;
+      font-weight: 300;
+      background-color: #0e0c0a;
+      color: #f0ece4;
+      min-height: 100vh;
+      overflow-x: hidden;
+    }
+
+    /* ── KEYFRAMES ── */
+    @keyframes fadeDown {
+      from { opacity: 0; transform: translateY(-24px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(32px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to   { opacity: 1; }
+    }
+
+    @keyframes slideInLeft {
+      from { opacity: 0; transform: translateX(-40px); }
+      to   { opacity: 1; transform: translateX(0); }
+    }
+
+    @keyframes slideInRight {
+      from { opacity: 0; transform: translateX(40px); }
+      to   { opacity: 1; transform: translateX(0); }
+    }
+
+    @keyframes shimmer {
+      0%   { background-position: -400px 0; }
+      100% { background-position: 400px 0; }
+    }
+
+    @keyframes glowPulse {
+      0%, 100% { box-shadow: 0 0 24px rgba(197,158,78,0.12); }
+      50%       { box-shadow: 0 0 48px rgba(197,158,78,0.28); }
+    }
+
+    @keyframes lineExpand {
+      from { width: 0; }
+      to   { width: 100%; }
+    }
+
+    @keyframes orb {
+      0%, 100% { transform: translate(-50%, -50%) scale(1); opacity: 0.07; }
+      50%       { transform: translate(-50%, -50%) scale(1.15); opacity: 0.13; }
+    }
+
+    @keyframes chipFadeIn {
+      from { opacity: 0; transform: translateY(10px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+
+    @keyframes borderGlow {
+      0%, 100% { border-color: rgba(197,158,78,0.3); }
+      50%       { border-color: rgba(197,158,78,0.7); }
+    }
+
+    /* ── NAVBAR ── */
+    nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 22px 56px;
+      background: rgba(14,12,10,0.95);
+      border-bottom: 1px solid rgba(255,255,255,0.07);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      animation: fadeDown 0.7s ease both;
+    }
+
+    .nav-logo {
+      font-family: 'Raleway', sans-serif;
+      font-weight: 600;
+      font-size: 19px;
+      letter-spacing: 0.3em;
+      color: #f0ece4;
+      text-decoration: none;
+      text-transform: uppercase;
+    }
+
+    .nav-logo span {
+      color: #c59e4e;
+    }
+
+    .nav-tagline {
+      font-size: 11px;
+      letter-spacing: 0.12em;
+      color: rgba(240,236,228,0.35);
+      font-style: italic;
+      animation: fadeIn 1.2s ease 0.5s both;
+    }
+
+    .nav-back {
+      font-size: 11px;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: rgba(197,158,78,0.7);
+      text-decoration: none;
+      border: 1px solid rgba(197,158,78,0.3);
+      padding: 7px 16px;
+      transition: background 0.25s, color 0.25s, border-color 0.25s;
+      animation: fadeDown 0.7s ease 0.2s both;
+    }
+
+    .nav-back:hover {
+      background: rgba(197,158,78,0.1);
+      color: #c59e4e;
+      border-color: #c59e4e;
+    }
+
+    /* ── HERO ── */
+    .hero {
+      background: linear-gradient(160deg, #1c1610 0%, #261b0f 45%, #1a1208 100%);
+      text-align: center;
+      padding: 90px 24px 80px;
+      border-bottom: 1px solid rgba(197,158,78,0.15);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero-orb {
+      position: absolute;
+      top: 50%; left: 50%;
+      width: 700px; height: 700px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(197,158,78,1), transparent 65%);
+      animation: orb 6s ease-in-out infinite;
+      pointer-events: none;
+    }
+
+    .hero-eyebrow {
+      font-size: 10px;
+      letter-spacing: 0.38em;
+      text-transform: uppercase;
+      color: #c59e4e;
+      margin-bottom: 22px;
+      position: relative;
+      z-index: 1;
+      animation: fadeDown 0.8s ease 0.3s both;
+    }
+
+    .hero-title {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(40px, 6vw, 68px);
+      font-weight: 400;
+      line-height: 1.12;
+      color: #f0ece4;
+      margin-bottom: 24px;
+      position: relative;
+      z-index: 1;
+      animation: fadeUp 0.9s ease 0.4s both;
+    }
+
+    .hero-title em {
+      font-style: italic;
+      color: #c59e4e;
+    }
+
+    .hero-divider {
+      width: 0;
+      height: 1px;
+      background: linear-gradient(to right, transparent, #c59e4e, transparent);
+      margin: 0 auto 24px;
+      animation: lineExpand 1s ease 1s both;
+      max-width: 240px;
+    }
+
+    .hero-sub {
+      font-size: 14px;
+      color: rgba(240,236,228,0.5);
+      max-width: 500px;
+      margin: 0 auto;
+      line-height: 1.9;
+      position: relative;
+      z-index: 1;
+      animation: fadeUp 1s ease 0.6s both;
+    }
+
+    /* ── MAIN ── */
+    .main {
+      display: flex;
+      max-width: 1080px;
+      margin: 72px auto;
+      padding: 0 32px;
+      gap: 0;
+      align-items: flex-start;
+    }
+
+    /* ── INFO COLUMN ── */
+    .info-col {
+      flex: 1;
+      padding-right: 60px;
+      border-right: 1px solid rgba(255,255,255,0.07);
+      animation: slideInLeft 0.9s ease 0.5s both;
+    }
+
+    .section-label {
+      font-size: 10px;
+      letter-spacing: 0.32em;
+      text-transform: uppercase;
+      color: #c59e4e;
+      margin-bottom: 14px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .section-label::after {
+      content: '';
+      flex: 1;
+      max-width: 40px;
+      height: 1px;
+      background: rgba(197,158,78,0.4);
+    }
+
+    .info-heading {
+      font-family: 'Playfair Display', serif;
+      font-size: 30px;
+      font-weight: 400;
+      line-height: 1.35;
+      color: #f0ece4;
+      margin-bottom: 18px;
+    }
+
+    .info-text {
+      font-size: 13.5px;
+      line-height: 1.9;
+      color: rgba(240,236,228,0.5);
+      margin-bottom: 38px;
+    }
+
+    /* Benefits */
+    .benefits { list-style: none; display: flex; flex-direction: column; gap: 20px; margin-bottom: 44px; }
+
+    .benefits li {
+      display: flex;
+      align-items: flex-start;
+      gap: 16px;
+      font-size: 13px;
+      color: rgba(240,236,228,0.6);
+      line-height: 1.55;
+      opacity: 0;
+      animation: fadeUp 0.7s ease forwards;
+    }
+
+    .benefits li:nth-child(1) { animation-delay: 0.9s; }
+    .benefits li:nth-child(2) { animation-delay: 1.05s; }
+    .benefits li:nth-child(3) { animation-delay: 1.2s; }
+    .benefits li:nth-child(4) { animation-delay: 1.35s; }
+
+    .benefit-icon {
+      width: 34px; height: 34px;
+      border: 1px solid rgba(197,158,78,0.35);
+      border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      color: #c59e4e;
+      font-size: 14px;
+      flex-shrink: 0;
+      margin-top: -2px;
+      animation: borderGlow 3s ease-in-out infinite;
+    }
+
+    .benefit-title { font-weight: 500; color: #f0ece4; display: block; margin-bottom: 2px; }
+
+    /* Museum chips */
+    .museums-row { display: flex; gap: 10px; flex-wrap: wrap; }
+
+    .museum-chip {
+      font-size: 10px;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      border: 1px solid rgba(197,158,78,0.3);
+      color: rgba(197,158,78,0.75);
+      padding: 7px 14px;
+      opacity: 0;
+      animation: chipFadeIn 0.5s ease forwards;
+      transition: background 0.2s, color 0.2s;
+    }
+
+    .museum-chip:hover {
+      background: rgba(197,158,78,0.1);
+      color: #c59e4e;
+    }
+
+    .museum-chip:nth-child(1) { animation-delay: 1.5s; }
+    .museum-chip:nth-child(2) { animation-delay: 1.65s; }
+    .museum-chip:nth-child(3) { animation-delay: 1.8s; }
+    .museum-chip:nth-child(4) { animation-delay: 1.95s; }
+
+    /* ── FORM COLUMN ── */
+    .form-col {
+      width: 390px;
+      flex-shrink: 0;
+      padding-left: 60px;
+      animation: slideInRight 0.9s ease 0.6s both;
+    }
+
+    .form-card {
+      background: #f5f1e9;
+      padding: 42px 38px;
+      position: relative;
+      animation: glowPulse 4s ease-in-out infinite;
+    }
+
+    .form-card::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0;
+      height: 3px;
+      background: linear-gradient(90deg, #c59e4e, #8b5e2a, #c59e4e);
+      background-size: 400px 100%;
+      animation: shimmer 3s linear infinite;
+    }
+
+    .form-card-label {
+      font-size: 10px;
+      letter-spacing: 0.3em;
+      text-transform: uppercase;
+      color: #c59e4e;
+      margin-bottom: 10px;
+    }
+
+    .form-card-title {
+      font-family: 'Playfair Display', serif;
+      font-size: 26px;
+      font-weight: 400;
+      color: #1a1410;
+      margin-bottom: 8px;
+    }
+
+    .form-card-desc {
+      font-size: 12px;
+      color: rgba(26,20,16,0.48);
+      line-height: 1.75;
+      margin-bottom: 28px;
+    }
+
+    /* ── MAILCHIMP OVERRIDES ── */
+    #mc_embed_signup {
+      background: transparent !important;
+      width: 100% !important;
+      font-family: 'Raleway', sans-serif !important;
+    }
+
+    #mc_embed_signup h2 { display: none; }
+
+    #mc_embed_signup .indicates-required {
+      font-size: 10px;
+      color: rgba(26,20,16,0.38);
+      letter-spacing: 0.06em;
+      margin-bottom: 18px;
+      text-align: right;
+    }
+
+    #mc_embed_signup .mc-field-group {
+      width: 100% !important;
+      padding-bottom: 0 !important;
+      margin-bottom: 16px;
+    }
+
+    #mc_embed_signup label {
+      font-family: 'Raleway', sans-serif !important;
+      font-size: 10px !important;
+      letter-spacing: 0.2em !important;
+      text-transform: uppercase !important;
+      color: #1a1410 !important;
+      font-weight: 500 !important;
+      margin-bottom: 7px !important;
+      display: block;
+    }
+
+    #mc_embed_signup input[type="email"],
+    #mc_embed_signup input[type="text"] {
+      width: 100% !important;
+      border: 1px solid rgba(26,20,16,0.16) !important;
+      border-radius: 0 !important;
+      padding: 12px 14px !important;
+      font-family: 'Raleway', sans-serif !important;
+      font-size: 13px !important;
+      font-weight: 300 !important;
+      color: #1a1410 !important;
+      background: #fff !important;
+      outline: none !important;
+      transition: border-color 0.25s, box-shadow 0.25s;
+    }
+
+    #mc_embed_signup input[type="email"]:focus,
+    #mc_embed_signup input[type="text"]:focus {
+      border-color: #c59e4e !important;
+      box-shadow: 0 0 0 3px rgba(197,158,78,0.13) !important;
+    }
+
+    #mc_embed_signup .optionalParent { margin-top: 8px; }
+    #mc_embed_signup .clear.foot { display: flex; flex-direction: column; }
+
+    #mc_embed_signup input#mc-embedded-subscribe {
+      background: #1a1410 !important;
+      color: #c59e4e !important;
+      font-family: 'Raleway', sans-serif !important;
+      font-size: 11px !important;
+      font-weight: 600 !important;
+      letter-spacing: 0.28em !important;
+      text-transform: uppercase !important;
+      border: none !important;
+      border-radius: 0 !important;
+      padding: 16px 32px !important;
+      cursor: pointer !important;
+      width: 100% !important;
+      height: auto !important;
+      transition: background 0.25s, color 0.25s, transform 0.15s;
+    }
+
+    #mc_embed_signup input#mc-embedded-subscribe:hover {
+      background: #c59e4e !important;
+      color: #1a1410 !important;
+      transform: translateY(-1px);
+    }
+
+    #mc_embed_signup input#mc-embedded-subscribe:active {
+      transform: translateY(0px);
+    }
+
+    #mc_embed_signup .refferal_badge { display: none !important; }
+    #mc_embed_signup .foot p { display: none !important; }
+
+    #mce-error-response   { color: #8b3a2a !important; font-size: 12px !important; margin-top: 10px; }
+    #mce-success-response { color: #4a6640 !important; font-size: 12px !important; margin-top: 10px; }
+
+    .privacy-note {
+      margin-top: 18px;
+      font-size: 10px;
+      color: rgba(26,20,16,0.3);
+      text-align: center;
+      letter-spacing: 0.1em;
+    }
+
+    /* ── FOOTER ── */
+    footer {
+      text-align: center;
+      padding: 36px 24px;
+      border-top: 1px solid rgba(255,255,255,0.06);
+      font-size: 11px;
+      color: rgba(240,236,228,0.2);
+      letter-spacing: 0.14em;
+      animation: fadeIn 1s ease 1.5s both;
+    }
+
+    /* ── RESPONSIVE ── */
+    @media (max-width: 800px) {
+      nav { padding: 18px 24px; }
+      .nav-tagline { display: none; }
+      .hero { padding: 64px 24px 56px; }
+      .main { flex-direction: column; margin: 48px auto; padding: 0 24px; }
+      .info-col {
+        padding-right: 0;
+        border-right: none;
+        border-bottom: 1px solid rgba(255,255,255,0.07);
+        padding-bottom: 44px;
+        margin-bottom: 44px;
+        animation: fadeUp 0.9s ease 0.5s both;
+      }
+      .form-col {
+        width: 100%;
+        padding-left: 0;
+        animation: fadeUp 0.9s ease 0.7s both;
+      }
+    }
+
+  </style>
+</head>
+<body>
+
+<!-- NAVBAR -->
+<nav>
+  <a class="nav-logo" href="https://museumticket.netlify.app">ECHO<span>VAULT</span></a>
+  <span class="nav-tagline">Where museums speak through echoes of the past</span>
+  <a class="nav-back" href="https://museumticket.netlify.app">← Back to Site</a>
+</nav>
+
+<!-- HERO -->
+<div class="hero">
+  <div class="hero-orb"></div>
+  <p class="hero-eyebrow">Booking Confirmation & Updates</p>
+  <h1 class="hero-title">Your Gateway to<br><em>World-Class Museums</em></h1>
+  <div class="hero-divider"></div>
+  <p class="hero-sub">Subscribe to receive instant booking confirmations and exclusive access to museum events — curated for you by EchoVault.</p>
+</div>
+
+<!-- MAIN -->
+<div class="main">
+
+  <!-- INFO -->
+  <div class="info-col">
+    <p class="section-label">Why Subscribe</p>
+    <h2 class="info-heading">Stay Connected to<br>Art, Culture &amp; History</h2>
+    <p class="info-text">
+      EchoVault brings the world's greatest museums to your fingertips. When you subscribe, you get more than a confirmation — you get a curated experience delivered straight to your inbox.
+    </p>
+
+    <ul class="benefits">
+      <li>
+        <div class="benefit-icon">✉</div>
+        <div>
+          <span class="benefit-title">Instant Confirmations</span>
+          Your ticket details delivered the moment you book.
+        </div>
+      </li>
+      <li>
+        <div class="benefit-icon">◈</div>
+        <div>
+          <span class="benefit-title">Early Exhibition Access</span>
+          Be the first to know about new and upcoming exhibitions.
+        </div>
+      </li>
+      <li>
+        <div class="benefit-icon">◇</div>
+        <div>
+          <span class="benefit-title">Skip-the-Line Reminders</span>
+          Timely tips and reminders before your museum visit.
+        </div>
+      </li>
+      <li>
+        <div class="benefit-icon">★</div>
+        <div>
+          <span class="benefit-title">Exclusive Offers</span>
+          Special deals on guided tours and museum memberships.
+        </div>
+      </li>
+    </ul>
+
+    <p class="section-label" style="margin-bottom:16px;">Our Museum Partners</p>
+    <div class="museums-row">
+      <span class="museum-chip">The Louvre</span>
+      <span class="museum-chip">The British Museum</span>
+      <span class="museum-chip">The Met</span>
+      <span class="museum-chip">MAP Bangalore</span>
+    </div>
+  </div>
+
+  <!-- FORM -->
+  <div class="form-col">
+    <div class="form-card">
+      <p class="form-card-label">Subscribe Now</p>
+      <h3 class="form-card-title">Confirm Your Booking</h3>
+      <p class="form-card-desc">Fill in your details below to receive booking confirmations and EchoVault updates straight to your inbox.</p>
+
+      <div id="mc_embed_shell">
+        <div id="mc_embed_signup">
+          <form action="https://app.us3.list-manage.com/subscribe/post?u=4e595a5c3c7b0dc028af2307c&amp;id=9c6ef55753&amp;f_id=0049bbe2f0"
+                method="post"
+                id="mc-embedded-subscribe-form"
+                name="mc-embedded-subscribe-form"
+                class="validate"
+                target="_blank">
+
+            <div id="mc_embed_signup_scroll">
+              <div class="indicates-required"><span class="asterisk">*</span> required</div>
+
+              <div class="mc-field-group">
+                <label for="mce-EMAIL">Email Address <span class="asterisk">*</span></label>
+                <input type="email" name="EMAIL" class="required email" id="mce-EMAIL" required value="" placeholder="your@email.com">
+              </div>
+
+              <div class="mc-field-group">
+                <label for="mce-FNAME">First Name</label>
+                <input type="text" name="FNAME" class="text" id="mce-FNAME" value="" placeholder="First name">
+              </div>
+
+              <div class="mc-field-group">
+                <label for="mce-LNAME">Last Name</label>
+                <input type="text" name="LNAME" class="text" id="mce-LNAME" value="" placeholder="Last name">
+              </div>
+
+              <div id="mce-responses" class="clear foot">
+                <div class="response" id="mce-error-response" style="display:none;"></div>
+                <div class="response" id="mce-success-response" style="display:none;"></div>
+              </div>
+
+              <div aria-hidden="true" style="position:absolute;left:-5000px;">
+                <input type="text" name="b_4e595a5c3c7b0dc028af2307c_9c6ef55753" tabindex="-1" value="">
+              </div>
+
+              <div class="optionalParent">
+                <div class="clear foot">
+                  <input type="submit" name="subscribe" id="mc-embedded-subscribe" class="button" value="Subscribe & Confirm">
+                </div>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+
+      <p class="privacy-note">No spam. Unsubscribe anytime. We respect your privacy.</p>
+    </div>
+  </div>
+
+</div>
+
+<!-- FOOTER -->
+<footer>
+  &copy; 2026 ECHOVAULT &nbsp;·&nbsp; Where museums speak through echoes of the past
+</footer>
+
+<script type="text/javascript" src="//s3.amazonaws.com/downloads.mailchimp.com/js/mc-validate.js"></script>
+<script type="text/javascript">
+(function($) {
+  window.fnames = new Array(); window.ftypes = new Array();
+  fnames[0]='EMAIL'; ftypes[0]='email';
+  fnames[1]='FNAME'; ftypes[1]='text';
+  fnames[2]='LNAME'; ftypes[2]='text';
+}(jQuery));
+var $mcj = jQuery.noConflict(true);
+</script>
+
+</body>
+</html>
